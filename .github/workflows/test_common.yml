@@ -18,7 +18,7 @@ jobs:
     strategy:
       fail-fast: false
       # the matrix is the cross product of `suite` x `platform`; the platform list is
-      # declared once instead of being repeated per suite. 3.14 runs the full set of
+      # declared once instead of being repeated per suite. 3.15 runs the full set of
       # suites on linux, like the other linux python versions.
       matrix:
         suite:
@@ -52,6 +52,10 @@ jobs:
           - label: linux-3.14
             os: blacksmith-8vcpu-ubuntu-2404
             python-version: "3.14"
+            shell: bash
+          - label: linux-3.15
+            os: blacksmith-8vcpu-ubuntu-2404
+            python-version: "3.15"
             shell: bash
 
           # linux test with minimal dependencies
